@@ -1,0 +1,11 @@
+.tabcontent{
+    display: flex;
+    flex-direction: column;
+
+    &__tab{
+        padding-top: 32px;
+        padding-left: 40px;
+        padding-bottom: 20px;
+    }
+
+}

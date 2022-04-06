@@ -1,0 +1,24 @@
+.temperature_switch {
+    display: flex;
+    position: absolute;
+    gap: 15px;
+    top: 6px;
+    right: 12px;
+  }
+  
+  .switch_item {
+    padding: 5px;
+    box-shadow: 0 0 10px 0px #888;
+    border-radius: 50%;
+    color: #000;
+    background-color: #fff;
+    width: 20px;
+    cursor: pointer;
+  }
+  
+  .switch_item.active {
+    box-shadow: none;
+    color: #fff;
+    background-color: #000;
+    pointer-events: none;
+  }

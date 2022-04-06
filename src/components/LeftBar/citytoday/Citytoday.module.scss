@@ -1,0 +1,53 @@
+.wetherday{
+    padding-top: 65px;
+    
+
+    &__icon{
+        display: flex;
+        justify-content: center;
+    }
+
+    &__info{
+        padding-top: 38px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid #B9B9B9;
+        
+        h3{
+            font-style: normal;
+            font-weight: 300;
+            font-size: 72px;
+            margin: 0;
+        }
+        h4{
+            font-style: normal;
+            font-weight: 500;
+            font-size: 28px;
+            padding-bottom: 15px;
+        }
+        p{
+            font-style: normal;
+            font-weight: 400;
+            font-size: 18px;
+        }
+        span{
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            color: #B9B9B9;
+        }
+    }
+
+    &__clouds{
+        display: flex;
+        padding-top: 15px;
+        img{
+            padding-right: 10px;
+        }
+        p{
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+        }
+    }
+}
