@@ -7,13 +7,17 @@ import TabPanel from '@mui/lab/TabPanel';
 import s from "./Tab.module.scss";
 import Today from './today/Today';
 import Week from './week/Week';
+import { useSelector } from 'react-redux';
 
 const Tabchoice = () => {
   const [value, setValue] = useState('1');
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  // const data =useSelector(state => state.testReducer.apiWeather);
+  // const days = data?.daily;
+  // console.log(days);
+
   return (
     <div className={s.tabcontent}>
     <TabContext value={value} >
@@ -26,7 +30,7 @@ const Tabchoice = () => {
   </Box>
   </div>
   <div>
-    <TabPanel value="1"><Today/></TabPanel>
+    {/* <TabPanel value="1">{days ? days.map((i,day) =>  <Today key ={i} day={day}/> ): "no day"}</TabPanel> */}
     <TabPanel value="2"><Week/></TabPanel>
   </div>
  

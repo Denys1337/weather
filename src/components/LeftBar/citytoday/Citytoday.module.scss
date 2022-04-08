@@ -5,6 +5,10 @@
     &__icon{
         display: flex;
         justify-content: center;
+        img{
+            max-height: 190px;
+            width: auto;
+        }
     }
 
     &__info{
