@@ -1,7 +1,6 @@
 import React from 'react';
 import s from "./Switchtemp.module.scss";
 
-
 const Switchtemp = () => {
  
   const classs = s.switch_item + ' ' + s.active;

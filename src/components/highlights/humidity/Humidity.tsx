@@ -1,12 +1,14 @@
 import React from 'react'
+import { FC } from 'react';
 import { useSelector } from 'react-redux';
+import { Store } from '../../../store';
+import { WeatherAll } from '../../../store/types';
 import p from "../Highlights.module.scss";
 import s from "./Humidity.module.scss";
 
-const Humidity = () => {
-  const data =useSelector(state => state.testReducer.apiWeather);
-  const humidity = data.daily && data.daily[0].humidity
-  console.log(data)
+const Humidity: FC = () => {
+  const data : WeatherAll = useSelector((state: Store) => state.testReducer.apiWeather);
+  const humidity: number = data.daily && data?.daily[0].humidity
 
   return (
     <div className={p.boxHigh}>

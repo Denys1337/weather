@@ -8,16 +8,18 @@ import s from "./Tab.module.scss";
 import Today from './today/Today';
 import Week from './week/Week';
 import { useSelector } from 'react-redux';
+import { FC } from 'react';
+import { Store } from '../../store';
+import { Daily, Hourly, WeatherAll } from '../../store/types';
 
-const Tabchoice = () => {
+const Tabchoice:FC = () => {
   const [value, setValue] = useState('1');
-  const handleChange = (event, newValue) => {
+  const handleChange = (event: React.SyntheticEvent<Element>, newValue:string):void => {
     setValue(newValue);
   };
-  // const data =useSelector(state => state.testReducer.apiWeather);
-  // const days = data?.daily;
-  // console.log(days);
-
+  const data:WeatherAll =useSelector((state:Store) => state.testReducer.apiWeather);
+  const todays:Daily[]= data?.daily;
+  const hourlys:Hourly[] = data?.hourly;
   return (
     <div className={s.tabcontent}>
     <TabContext value={value} >
@@ -30,8 +32,8 @@ const Tabchoice = () => {
   </Box>
   </div>
   <div>
-    {/* <TabPanel value="1">{days ? days.map((i,day) =>  <Today key ={i} day={day}/> ): "no day"}</TabPanel> */}
-    <TabPanel value="2"><Week/></TabPanel>
+    <TabPanel value="1" className={s.card}>{hourlys ? hourlys.map((hourly,index) => <Today  hourly={hourly} key={index}/>).slice(0,8): "no hours"}</TabPanel>
+    <TabPanel value="2" className={s.card}>{todays ? todays.map((today,index) =>  <Week today={today} key={index}/> ): "no day"}</TabPanel>
   </div>
  
 </TabContext>

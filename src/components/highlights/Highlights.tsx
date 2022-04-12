@@ -6,8 +6,9 @@ import Temperature from './temperature/Temperature';
 import Visibility from './visibility/Visibility';
 import Wild from './wind/Wind';
 import s from "./Highlights.module.scss";
+import { FC } from 'react';
 
-const Highlights = () => {
+const Highlights:FC = () => {
   return (
       <div>
           <h3>Today’s Highlights</h3>

@@ -1,11 +1,14 @@
 import React from 'react';
+import { FC } from 'react';
 import { useSelector } from 'react-redux';
+import { Store } from '../../../store';
+import { WeatherAll } from '../../../store/types';
 import p from "../Highlights.module.scss";
 import s from "./Visibility.module.scss";
 
-const Visibility = () => {
-  const data =useSelector(state => state.testReducer.apiWeather);
-  const visibility = (data.current && data.current.visibility) / 1000;
+const Visibility: FC = () => {
+  const data:WeatherAll =useSelector((state:Store) => state.testReducer.apiWeather);
+  const visibility:number = (data.current && data.current.visibility) / 1000;
  
   return (
     <div className={p.boxHigh}>

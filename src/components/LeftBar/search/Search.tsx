@@ -5,8 +5,9 @@ import home from "../../../images/home.png";
 import { useDispatch } from 'react-redux';
 import { fetchDataWeather } from '../../../hooks/fetchDataWeather';
 import Autocomplete from "react-google-autocomplete";
+import { FC } from 'react';
 
-const Search = () => {
+const Search:FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,7 +23,7 @@ const Search = () => {
       apiKey="AIzaSyAQ0zSdSTORRJk0oYmKM2u_yuwwWRoYe7s"
       onPlaceSelected={(place) => {
         
-        const selectedPlace = place.formatted_address.split(',')[0];
+        const selectedPlace:string = place.formatted_address.split(',')[0];
         dispatch(fetchDataWeather(selectedPlace));
          }}
       id="search"

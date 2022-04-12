@@ -4,11 +4,14 @@ import s from "./Temperature.module.scss";
 import hight from "../../../images/hight-term.png";
 import low from "../../../images/low-term.png";
 import { useSelector } from 'react-redux';
+import { Store } from '../../../store';
+import { WeatherAll } from '../../../store/types';
+import { FC } from 'react';
 
-const Temperature = () => {
-  const data = useSelector(state => state.testReducer.apiWeather);
-  const min_temp = Math.round(data.daily && data.daily[0].temp.min);
-  const max_temp = Math.round(data.daily && data.daily[0].temp.max);
+const Temperature: FC = () => {
+  const data:WeatherAll = useSelector((state:Store) => state.testReducer.apiWeather);
+  const min_temp: number = Math.round(data.daily && data.daily[0].temp.min);
+  const max_temp:number = Math.round(data.daily && data.daily[0].temp.max);
  
   return (
     <div className={p.boxHigh}>
