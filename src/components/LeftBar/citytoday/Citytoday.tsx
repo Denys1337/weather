@@ -11,12 +11,12 @@ import { Store } from '../../../store';
 
 const Citytoday: FC = () => {
     const data: WeatherAll =useSelector((state:Store) => state.testReducer.apiWeather);
-    const data_city:CurrentWeather =useSelector((state:Store) => state.testReducer.city);
-    const city:string = data_city.name;
-    const county:string = data_city?.sys?.country;
-    const cloudness:string =(data_city && data_city.weather[0].description).charAt(0).toUpperCase() + (data_city && data_city.weather[0].description).slice(1);;
+    const data_city:CurrentWeather | null = useSelector((state:Store) => state.testReducer.city);
+    const city = data_city?.name;
+    const county = data_city?.sys?.country;
+    const cloudness =(data_city?.weather && data_city?.weather[0]?.description);
     const daily: Daily[] = data.daily;
-    const clouds:number = daily && data.daily[0].clouds;
+    const clouds:number = daily && data?.daily[0].clouds;
     const temperature:number = Math.round(data?.current?.temp ?? 0);
     const hours_now:string | number = new Date().getHours() < 10 ? "0" + new Date().getHours() : new Date().getHours();
     const minutes_now: string | number = new Date().getMinutes()< 10 ? "0" + new Date().getMinutes() : new Date().getMinutes();

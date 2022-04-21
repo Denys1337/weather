@@ -16,6 +16,7 @@ const Tabchoice:FC = () => {
   const [value, setValue] = useState('1');
   const handleChange = (event: React.SyntheticEvent<Element>, newValue:string):void => {
     setValue(newValue);
+    console.log(event)
   };
   const data:WeatherAll =useSelector((state:Store) => state.testReducer.apiWeather);
   const todays:Daily[]= data?.daily;

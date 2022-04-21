@@ -15,7 +15,6 @@ const Search:FC = () => {
     
   }, [dispatch]);
 
- 
   return (
     <div className={s.search}>
         <span className={s.search__icon}><img src={icon} alt="icon-search" /></span>
@@ -23,7 +22,7 @@ const Search:FC = () => {
       apiKey="AIzaSyAQ0zSdSTORRJk0oYmKM2u_yuwwWRoYe7s"
       onPlaceSelected={(place) => {
         
-        const selectedPlace:string = place.formatted_address.split(',')[0];
+        const selectedPlace:string  = place!.formatted_address!.split(',')[0];
         dispatch(fetchDataWeather(selectedPlace));
          }}
       id="search"

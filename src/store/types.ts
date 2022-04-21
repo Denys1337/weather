@@ -1,21 +1,21 @@
 export type WeatherReducer = {
-    apiWeather: null | WeatherAll,
-    city: CurrentWeather | null,
+    apiWeather:  WeatherAll ,
+    city:CurrentWeather | null ,
     coord: {
       lat: number,
-      lon: number,
-      lng:number,
+      lon:number,
     },
     
 }
 
 export type WeatherAll = {
     name: string;
-    curWeather: CurrentWeather | null;
+    weather: Weather[];
+    curWeather: CurrentWeather;
     timezone: string;
     timezone_offset: number;
-    current: InfoWeather | null;
-    minutely: Minutely | null;
+    current: InfoWeather ;
+    minutely: Minutely ;
     hourly: Hourly[];
     daily: Daily[];
     
@@ -65,19 +65,18 @@ export type Temperature = {
    };
 
 export type CurrentWeather = {
-    coord:Coord | null,
+    coord?:Coord ,
     weather: Weather[],
-    base: string,
-    main: any,
-    visibility:number,
-    wind:Wind |null,
-    clouds: Clouds | null,
-    dt: number,
-    sys: InternalParameters | null,
-    timezone: number,
-    id: number,
-    name: string,
-    cod: number,
+    base?: string,
+    main?: any,
+    visibility?:number,
+    wind?:Wind ,
+    clouds?: Clouds ,
+    dt?: number,
+    sys?: InternalParameters ,
+    id?: number,
+    name?: string,
+    cod?: number,
 }
 
 export type InfoWeather ={
@@ -123,7 +122,6 @@ export type Minutely = {
    export type Coord = {
     lng: number;
     lat: number;
-    lon:number;
    };
 
    export type Wind = {

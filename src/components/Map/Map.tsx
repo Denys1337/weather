@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import { MAP_OPTIONS_DEFAULT } from '../../core/helpers';
 import { FC } from 'react';
 import { Coord, Loader } from '../../store/types';
@@ -9,13 +9,12 @@ type MapProps = {
   lon: number
 }
 
-
 const Map:FC<MapProps> = ({lat,lon}) => { 
   const containerStyle = {
-    width: '400px',
-    height: '400px'
+    width: '500px',
+    height: '400px',
+    marginRight: '59px',
   };
-  
   const center:Coord = {
     lat: lat,
     lng: lon,
@@ -34,7 +33,7 @@ const Map:FC<MapProps> = ({lat,lon}) => {
     setMap(map)
   }, [])
 
-  const onUnmount = useCallback(function callback(map): void {
+  const onUnmount = useCallback(function callback(): void {
     setMap(null)
   }, [])
 
@@ -47,8 +46,9 @@ const Map:FC<MapProps> = ({lat,lon}) => {
         onUnmount={onUnmount}
         options = {MAP_OPTIONS_DEFAULT}
       >
-        { /* Child components, such as markers, info windows, etc. */ }
-        <></>
+       <Marker
+       position={center}
+       />
       </GoogleMap>
   ) : <></>
 }

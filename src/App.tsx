@@ -7,13 +7,13 @@ import Map from './components/Map/Map';
 import Switchtemp from './components/switch/Switchtemp';
 import Tab from './components/Tab/Tabchoice';
 import { Store } from './store';
-import { Coord } from './store/types';
 
 
 
 const App:FC = () => {
-  const data:Coord = useSelector((state: Store) => state?.testReducer?.coord);
+  const data= useSelector((state: Store) => state?.testReducer?.coord);
   const {lat,lon} = data;
+
   return (
     <div className="App">
       <LeftBar/>
@@ -21,7 +21,7 @@ const App:FC = () => {
           <Tab/>
           <div className="content">
           <Highlights/>
-           <Map lat={lat} lon={lon}/>
+           <Map lat={lat} lon={lon} />
           
           </div>  
       </div>
