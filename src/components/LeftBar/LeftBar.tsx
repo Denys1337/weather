@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { FC } from 'react';
 import Citytoday from './citytoday/Citytoday';
 import s from "./LeftBar.module.scss";
@@ -6,18 +6,10 @@ import Search from './search/Search';
 
 const LeftBar: FC = () => {
 
-  const clasStyle: string = s.leftbar + ' ' + s.menu;
-  let menuBtnRef = useRef(null);
-  let menuRef =  useRef(null);
-  let menuBtn: HTMLDivElement | null = menuBtnRef.current;
-  let menu: HTMLDivElement | null = menuRef.current;
-
-  const menuBar = ()=>{
-      menuBtn!.classList.toggle('active');
-      menu!.classList.toggle('active');
-   
-  }
-
+  const [isActive,setActive] = useState(false)
+  const handleToggle = () => {
+    setActive((isActive)=>!isActive);
+  };
 
   return (
     <div>
@@ -27,17 +19,17 @@ const LeftBar: FC = () => {
     </div>
 
     < header >
-    <div ref={ menuBtnRef } className = { s.menu_btn } onClick = {()=> menuBar()} >
+    <div  className = { `${s.menu_btn} ${isActive ? s.active : ""}` } onClick = {handleToggle} >
       <span></span>
       < span > </span>
       < span > </span>
       </div>
       </header>
 
-      <div ref={menuRef} className = { s.menu} >
+    < div className = {`${s.menu} ${isActive ? s.active : ""}`} >
         <Search/>
         < Citytoday />
-      </div>
+        </div>
 
         </div>
   )

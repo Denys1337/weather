@@ -11,7 +11,8 @@ type MapProps = {
 
 const Map: FC<MapProps> = ({ lat, lon }) => {
   const containerStyle = {
-    width: '500px',
+    width: '100%',
+    maxWidth: '300px',
     height: '400px',
     marginRight: '59px',
   };
