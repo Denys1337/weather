@@ -9,17 +9,17 @@ type MapProps = {
   lon: number
 }
 
-const Map:FC<MapProps> = ({lat,lon}) => { 
+const Map: FC<MapProps> = ({ lat, lon }) => {
   const containerStyle = {
     width: '500px',
     height: '400px',
     marginRight: '59px',
   };
-  const center:Coord = {
+  const center: Coord = {
     lat: lat,
     lng: lon,
   };
- 
+
   const { isLoaded }: Loader = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyAQ0zSdSTORRJk0oYmKM2u_yuwwWRoYe7s"
@@ -38,18 +38,18 @@ const Map:FC<MapProps> = ({lat,lon}) => {
   }, [])
 
   return isLoaded ? (
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={10}
-        onLoad={onLoad}
-        onUnmount={onUnmount}
-        options = {MAP_OPTIONS_DEFAULT}
-      >
-       <Marker
-       position={center}
-       />
-      </GoogleMap>
+    <GoogleMap
+        mapContainerStyle= { containerStyle }
+        center = { center }
+  zoom = { 10}
+  onLoad = { onLoad }
+  onUnmount = { onUnmount }
+  options = { MAP_OPTIONS_DEFAULT }
+    >
+    <Marker
+       position={ center }
+  />
+    </GoogleMap>
   ) : <></>
 }
 

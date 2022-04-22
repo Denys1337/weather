@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { Daily } from "../../store/types";
 
 export const uviIndex = (uvi: Daily | number): number => {
