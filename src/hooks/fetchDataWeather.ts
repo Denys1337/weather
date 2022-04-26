@@ -1,20 +1,10 @@
 import axios from "axios";
+import { AxiosResponse } from "../core/types/fetchDataType";
 import { Dispatch } from "redux";
 import {FETCH_DATA_WEATHER, FETCH_DATA_CITY, FETCH_DATA_COORD} from "../store/reducers/testReducer";
-import { WeatherReducer } from "../core/types/weatherTypes";
 import { API_KEY, BASE_URL } from "../core/constants/constants";
 
- interface AxiosResponse  {
-  data: WeatherReducer;
-  status: number;
-  statusText: string;
-  headers: any;
-  config: AxiosRequestConfig;
-  request?: any;
-}
-interface AxiosRequestConfig {
-  handlerEnabled: boolean;
-}
+ 
 
 export const fetchDataWeather = (city:string) => {
     return async (dispatch:Dispatch):Promise<void> => {

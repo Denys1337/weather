@@ -1,6 +1,7 @@
 import React from 'react';
 import { FC } from 'react';
-import { Daily, Temperature } from '../../../core/types/weatherTypes';
+import { days } from '../../../core/constants/constants';
+import { Daily} from '../../../core/types/weatherTypes';
 import s from "../today/Today.module.scss";
 
 type WeekProps ={
@@ -11,7 +12,6 @@ const Week:FC<WeekProps> = ({today}) => {
   const temp_max:number = Math.round(today?.temp.max);
   const temp_min:number = Math.round(today?.temp.min);
   const BASE_ICON_URL:string = 'http://openweathermap.org/img/wn/';
-  const days:string[]  = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
  
   return (
     <div className={s.weatherToday}>
