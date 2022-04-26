@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { FC } from 'react';
 import Citytoday from './citytoday/Citytoday';
 import s from "./LeftBar.module.scss";
@@ -25,8 +25,6 @@ const LeftBar: FC = () => {
   else{
     enableScrolling()
   }
-
-
 
   return (
     <div>

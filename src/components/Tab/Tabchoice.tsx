@@ -10,9 +10,10 @@ import Week from './week/Week';
 import { useSelector } from 'react-redux';
 import { FC } from 'react';
 import { Store } from '../../store';
-import { Daily, Hourly, WeatherAll } from '../../store/types';
+import { Daily, Hourly, WeatherAll } from '../../core/types/weatherTypes';
 
 const Tabchoice:FC = () => {
+
   const [value, setValue] = useState('1');
   const handleChange = (event: React.SyntheticEvent<Element>, newValue:string):void => {
     setValue(newValue);
@@ -21,6 +22,7 @@ const Tabchoice:FC = () => {
   const data:WeatherAll =useSelector((state:Store) => state.testReducer.apiWeather);
   const todays:Daily[]= data?.daily;
   const hourlys:Hourly[] = data?.hourly;
+  
   return (
     <div className={s.tabcontent}>
     <TabContext value={value} >

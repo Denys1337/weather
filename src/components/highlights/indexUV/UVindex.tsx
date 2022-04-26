@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { Store } from '../../../store';
-import { WeatherAll } from '../../../store/types';
+import { WeatherAll } from '../../../core/types/weatherTypes';
 import s from "./IndexUV.module.scss";
 import {uviIndex} from "../../../core/helpers/utils"
 

@@ -1,5 +1,6 @@
 import { translateCelsius, translateFahrenheit } from "../../core/helpers/utils";
-import { WeatherAll, WeatherReducer } from "../types";
+import { WeatherReducer } from "../../core/types/reducerTypes";
+import { WeatherAll } from "../../core/types/weatherTypes";
 
 const initialState: WeatherReducer = {
   apiWeather: {} as WeatherAll,

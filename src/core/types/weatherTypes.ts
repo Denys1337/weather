@@ -1,13 +1,3 @@
-export type WeatherReducer = {
-    apiWeather:  WeatherAll ,
-    city:CurrentWeather | null ,
-    coord: {
-      lat: number,
-      lon:number,
-    },
-    
-}
-
 export type WeatherAll = {
     name: string;
     weather: Weather[];
@@ -17,9 +7,9 @@ export type WeatherAll = {
     current: InfoWeather ;
     minutely: Minutely ;
     hourly: Hourly[];
-    daily: Daily[];
-    
-}
+    daily: Daily[]; 
+};
+
 export type Daily = {
     dt: number;
  sunrise: number;
@@ -39,7 +29,7 @@ export type Daily = {
  clouds: number;
  pop: number;
  uvi: number;
-}
+};
 
 export type Weather ={ 
     id: number,
@@ -62,7 +52,7 @@ export type Temperature = {
     night: number;
     eve: number;
     morn: number;
-   };
+};
 
 export type CurrentWeather = {
     coord?:Coord ,
@@ -77,7 +67,7 @@ export type CurrentWeather = {
     id?: number,
     name?: string,
     cod?: number,
-}
+};
 
 export type InfoWeather ={
     dt: number;
@@ -95,14 +85,14 @@ export type InfoWeather ={
  wind_deg: number;
  wind_gust: number;
  weather: Weather[];
-}
+};
 
 export type Minutely = {
     dt: number;
     precipitation: number;
-   };
+};
 
-   export type Hourly = {
+export type Hourly = {
     dt: number;
     temp: number;
     feels_like: number;
@@ -117,34 +107,29 @@ export type Minutely = {
     wind_gust: number;
     weather: Weather[];
     pop: number;
-   };
+};
 
-   export type Coord = {
+export type Coord = {
     lng: number;
     lat: number;
-   };
+};
 
-   export type Wind = {
+export type Wind = {
     speed: number;
     deg: number;
-   };
-   export type Clouds = {
-    all: number;
-   };
+};
 
-   export type InternalParameters = {
+export type Clouds = {
+    all: number;
+};
+
+export type InternalParameters = {
     type: number;
     id: number;
     message: number;
     country: string;
     sunrise: number;
     sunset: number;
-   };
+};
 
-   export type Loader = {
-    isLoaded: boolean
-  }
 
-export type HTMLElementEvent<T extends HTMLElement> = MouseEvent & {
-    target: T;
-}

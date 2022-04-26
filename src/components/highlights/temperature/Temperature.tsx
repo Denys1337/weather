@@ -5,7 +5,7 @@ import hight from "../../../images/hight-term.png";
 import low from "../../../images/low-term.png";
 import { useSelector } from 'react-redux';
 import { Store } from '../../../store';
-import { WeatherAll } from '../../../store/types';
+import { WeatherAll } from '../../../core/types/weatherTypes';
 import { FC } from 'react';
 
 const Temperature: FC = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FC } from 'react';
-import { Hourly } from '../../../store/types';
+import { Hourly } from '../../../core/types/weatherTypes';
 import s from "./Today.module.scss";
 
 type TodayProps = {
@@ -8,6 +8,7 @@ type TodayProps = {
 } 
 
 const Today:FC<TodayProps> = ({hourly}) => {
+
   const temp:number = Math.round(hourly?.temp);
   const BASE_ICON_URL:string = 'http://openweathermap.org/img/wn/';
   
@@ -20,4 +21,4 @@ const Today:FC<TodayProps> = ({hourly}) => {
   )
 }
 
-export default Today
+export default Today;

@@ -1,14 +1,22 @@
-import { Daily } from "../../store/types";
+import { Daily } from "../types/weatherTypes";
 
 export const uviIndex = (uvi: Daily | number): number => {
-	if (uvi === 0) return 0;
-	if (uvi === 2) return 0.05;
-	if (uvi <= 4) return 0.1;
-	if (uvi <= 6) return 0.35;
-	if (uvi <= 8) return 0.65;
-	if (uvi <= 10) return 0.856;
-
-	return 1;
+	switch (true) {
+		case uvi===0:
+			return 0;
+		case uvi ===2:
+			return 0.05;
+		case uvi<=4:
+			return 0.1;
+		case uvi <= 6:
+			return 0.35;
+		case uvi <= 8:
+			return 0.65;
+		case uvi <= 10:
+			return 0.856;
+		default:
+			return 1;
+	}
 };
 
 export const getHumidityStyle = (humidity: number): object => ({
@@ -17,7 +25,6 @@ export const getHumidityStyle = (humidity: number): object => ({
 
 export const translateFahrenheit = (degree:number):number=>{
 	return	Math.round(degree * 9 / 5 + 32)
-	
 }
 
 export const translateCelsius = (degree:number):number=>{

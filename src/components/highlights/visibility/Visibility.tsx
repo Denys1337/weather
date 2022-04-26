@@ -2,7 +2,7 @@ import React from 'react';
 import { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { Store } from '../../../store';
-import { WeatherAll } from '../../../store/types';
+import { WeatherAll } from '../../../core/types/weatherTypes';
 import p from "../Highlights.module.scss";
 import s from "./Visibility.module.scss";
 

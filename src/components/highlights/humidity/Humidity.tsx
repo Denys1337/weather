@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { getHumidityStyle } from '../../../core/helpers/utils';
 import { Store } from '../../../store';
-import { WeatherAll } from '../../../store/types';
+import { WeatherAll } from '../../../core/types/weatherTypes';
 import p from "../Highlights.module.scss";
 import s from "./Humidity.module.scss";
 

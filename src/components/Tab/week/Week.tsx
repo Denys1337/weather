@@ -1,6 +1,6 @@
 import React from 'react';
 import { FC } from 'react';
-import { Daily, Temperature } from '../../../store/types';
+import { Daily, Temperature } from '../../../core/types/weatherTypes';
 import s from "../today/Today.module.scss";
 
 type WeekProps ={

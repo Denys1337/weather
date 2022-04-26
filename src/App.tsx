@@ -8,9 +8,8 @@ import Switchtemp from './components/switch/Switchtemp';
 import Tab from './components/Tab/Tabchoice';
 import { Store } from './store';
 
-
-
 const App:FC = () => {
+
   const data= useSelector((state: Store) => state?.testReducer?.coord);
   const {lat,lon} = data;
 
@@ -25,8 +24,6 @@ const App:FC = () => {
           </div>  
       </div>
          <Switchtemp/>
-        
-      
     </div>
   );
 }

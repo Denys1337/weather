@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from 'react';
 import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
-import { MAP_OPTIONS_DEFAULT } from '../../core/helpers';
+import { MAP_OPTIONS_DEFAULT } from '../../core/helpers/mapConfig';
 import { FC } from 'react';
-import { Coord, Loader } from '../../store/types';
+import { Coord, Loader } from '../../core/types/weatherTypes';
 import s from './Map.module.scss';
 
 type MapProps = {
@@ -15,6 +15,7 @@ const Map: FC<MapProps> = ({ lat, lon }) => {
     width: '100%',
     height: '310px',
   };
+  
   const center: Coord = {
     lat: lat,
     lng: lon,

@@ -6,7 +6,7 @@ import cloud from "../../../images/Cloud.png";
 import dot from "../../../images/dot.png";
 import { useSelector } from 'react-redux';
 import { FC } from 'react';
-import { CurrentWeather, Daily, WeatherAll } from '../../../store/types';
+import { CurrentWeather, Daily, WeatherAll } from '../../../core/types/weatherTypes';
 import { Store } from '../../../store';
 
 const Citytoday: FC = () => {

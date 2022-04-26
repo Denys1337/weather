@@ -5,7 +5,7 @@ import down from "../../../images/down.png";
 import s from "./Sunrise.module.scss";
 import { useSelector } from 'react-redux';
 import { Store } from '../../../store';
-import { WeatherAll } from '../../../store/types';
+import { WeatherAll } from '../../../core/types/weatherTypes';
 import { FC } from 'react';
 
 const Sunrise: FC = () => {
