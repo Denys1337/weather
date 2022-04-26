@@ -1,11 +1,13 @@
 .App {
     display: flex;
-
+    width: 100%;
 }
 
 .content {
     display: flex;
 }
+
+    
 
 @media (max-width: 1200px) {
     .content {

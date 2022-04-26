@@ -10,6 +10,23 @@ const LeftBar: FC = () => {
   const handleToggle = () => {
     setActive((isActive)=>!isActive);
   };
+  function disableScrolling() {
+    const x = window.scrollX;
+    const y = window.scrollY;
+    window.onscroll = function () { window.scrollTo(x, y); };
+  }
+
+  function enableScrolling() {
+    window.onscroll = function () { };
+  }
+  if(isActive){
+    disableScrolling()
+  }
+  else{
+    enableScrolling()
+  }
+
+
 
   return (
     <div>

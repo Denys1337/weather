@@ -2,8 +2,15 @@
     display: flex;
     position: absolute;
     gap: 15px;
-    top: 6px;
+    top: 35px;
     right: 12px;
+  }
+
+  @media(max-width:1200px) {
+    .temperature_switch{
+      right: 5px;
+      top:20px;
+    }
   }
   
   .switch_item {

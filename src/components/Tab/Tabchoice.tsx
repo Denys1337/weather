@@ -33,8 +33,8 @@ const Tabchoice:FC = () => {
   </Box>
   </div>
   <div>
-    <TabPanel value="1" className={s.card}>{hourlys ? hourlys.map((hourly,index) => <Today  hourly={hourly} key={index}/>).slice(0,8): "no hours"}</TabPanel>
-    <TabPanel value="2" className={s.card}>{todays ? todays.map((today,index) =>  <Week today={today} key={index}/> ): "no day"}</TabPanel>
+    <TabPanel value="1" sx={{ padding: 0}} className={s.card}>{hourlys ? hourlys.map((hourly,index) => <Today  hourly={hourly} key={index}/>).slice(0,8): "no hours"}</TabPanel>
+    <TabPanel value = "2" sx = {{ padding: 0}} className={s.card}>{todays ? todays.map((today,index) =>  <Week today={today} key={index}/> ): "no day"}</TabPanel>
   </div>
  
 </TabContext>

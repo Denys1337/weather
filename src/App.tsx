@@ -18,11 +18,10 @@ const App:FC = () => {
     <div className="App">
       <LeftBar/>
       <div>
-          <Tab/>
+            <Tab/>      
           <div className="content">
-          <Highlights/>
-           <Map lat={lat} lon={lon} />
-          
+             <Highlights/>
+            <Map lat={lat} lon={lon} />
           </div>  
       </div>
          <Switchtemp/>

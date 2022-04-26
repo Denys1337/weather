@@ -144,3 +144,7 @@ export type Minutely = {
    export type Loader = {
     isLoaded: boolean
   }
+
+export type HTMLElementEvent<T extends HTMLElement> = MouseEvent & {
+    target: T;
+}

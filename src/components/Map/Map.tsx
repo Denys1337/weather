@@ -3,6 +3,7 @@ import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
 import { MAP_OPTIONS_DEFAULT } from '../../core/helpers';
 import { FC } from 'react';
 import { Coord, Loader } from '../../store/types';
+import s from './Map.module.scss';
 
 type MapProps = {
   lat: number,
@@ -12,9 +13,7 @@ type MapProps = {
 const Map: FC<MapProps> = ({ lat, lon }) => {
   const containerStyle = {
     width: '100%',
-    maxWidth: '300px',
-    height: '400px',
-    marginRight: '59px',
+    height: '310px',
   };
   const center: Coord = {
     lat: lat,
@@ -39,9 +38,10 @@ const Map: FC<MapProps> = ({ lat, lon }) => {
   }, [])
 
   return isLoaded ? (
+    <div className= { s.map } >
     <GoogleMap
         mapContainerStyle= { containerStyle }
-        center = { center }
+  center = { center }
   zoom = { 10}
   onLoad = { onLoad }
   onUnmount = { onUnmount }
@@ -51,7 +51,8 @@ const Map: FC<MapProps> = ({ lat, lon }) => {
        position={ center }
   />
     </GoogleMap>
+    </div>
   ) : <></>
 }
 
-export default Map
+export default React.memo(Map)
