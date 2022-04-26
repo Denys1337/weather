@@ -6,10 +6,11 @@ import s from "./Switchtemp.module.scss";
 const Switchtemp:FC = () => {
  
   const classs:string = s.switch_item + ' ' + s.active;
-  const switchScale = (e: any): void => {
+  const switchScale = (e: SyntheticEvent<EventTarget>): void => {
     const switchItems = document.querySelectorAll(`.${s.switch_item}`)
     switchItems.forEach(item => item.classList.remove(s.active))
-    e.target.classList.add(s.active)
+    const target = e.target as HTMLElement;
+    target.classList.add(s.active)
   }
   const dispatch = useDispatch()
   const switchFahrenheit = (e: SyntheticEvent<EventTarget>): void => {
