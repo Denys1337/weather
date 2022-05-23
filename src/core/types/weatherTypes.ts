@@ -110,7 +110,7 @@ export type Hourly = {
 };
 
 export type Coord = {
-    lng: number;
+    lon: number;
     lat: number;
 };
 

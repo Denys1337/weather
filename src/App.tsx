@@ -1,29 +1,23 @@
 import { FC } from 'react';
-import { useSelector } from 'react-redux';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Highlights from './components/highlights/Highlights';
-import LeftBar from './components/LeftBar/LeftBar';
-import Map from './components/Map/Map';
-import Switchtemp from './components/switch/Switchtemp';
-import Tab from './components/Tab/Tabchoice';
-import { Store } from './store';
+import CityCards from './components/LeftBar/citytoday/CityCards';
+import Search from './components/LeftBar/search/Search';
+import WeatherDetails from './components/weatherDetails/WeatherDetails';
 
-const App:FC = () => {
 
-  const data= useSelector((state: Store) => state?.testReducer?.coord);
-  const {lat,lon} = data;
+const App: FC = () => {
 
   return (
     <div className="App">
-      <LeftBar/>
-      <div>
-            <Tab/>      
-          <div className="content">
-             <Highlights/>
-            <Map lat={lat} lon={lon} />
-          </div>  
-      </div>
-         <Switchtemp/>
+       <Search />
+      <BrowserRouter>
+      
+        <Routes>
+          <Route path = '/' element= {<CityCards />}/>
+          <Route path='/weather/:lat/:lon' element={<WeatherDetails />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

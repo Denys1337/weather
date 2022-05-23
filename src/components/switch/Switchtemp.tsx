@@ -1,7 +1,8 @@
-import React, { FC, SyntheticEvent } from 'react';
+import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
 import { celsius, fahrenheit } from '../../store/reducers/testReducer';
 import s from "./Switchtemp.module.scss";
+import { SyntheticEvent } from "../../core/types/eventType"
 
 const Switchtemp:FC = () => {
  
@@ -9,7 +10,7 @@ const Switchtemp:FC = () => {
   const switchScale = (e: SyntheticEvent<EventTarget>): void => {
     const switchItems = document.querySelectorAll(`.${s.switch_item}`)
     switchItems.forEach(item => item.classList.remove(s.active))
-    const target = e.target as HTMLElement;
+    const target = e.currentTarget as HTMLElement;
     target.classList.add(s.active)
   }
   const dispatch = useDispatch()
@@ -21,6 +22,7 @@ const Switchtemp:FC = () => {
     switchScale(e)
     dispatch(celsius())
   }
+ 
   
   return (
     <div className={s.temperature_switch}>

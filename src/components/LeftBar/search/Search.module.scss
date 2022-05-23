@@ -1,9 +1,11 @@
 .search{
     position: relative;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    max-width: 400px;
+    margin: 0 auto;
     gap: 0 10px;
+    padding-top: 40px;
+
     input{
         border: none;
         border-radius: 50px;
@@ -16,6 +18,7 @@
 	    max-width: 400px;
         width: 100%;
         min-width: 300px;
+        
     }
         
     }
@@ -23,6 +26,7 @@
     &__icon{
         position: absolute;
         padding:10px 17px;
+        right: 5px;
         cursor: pointer;
     }
     

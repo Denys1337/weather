@@ -2,9 +2,9 @@ import { translateCelsius, translateFahrenheit } from "../../core/helpers/utils"
 import { WeatherReducer } from "../../core/types/reducerTypes";
 import { WeatherAll } from "../../core/types/weatherTypes";
 
-const initialState: WeatherReducer = {
+const initialState:WeatherReducer = {
   apiWeather: {} as WeatherAll,
-  city: null,
+  city:  [] as Array<WeatherAll>,
   coord: {
     lat: 49.2328,
     lon: 28.481,
@@ -12,6 +12,7 @@ const initialState: WeatherReducer = {
 
 };
 export const FETCH_DATA_WEATHER = "FETCH_DATA_WEATHER";
+export const ADD_CARD = "ADD_CARD";
 export const FETCH_DATA_CITY = "FETCH_DATA_CITY";
 export const FETCH_DATA_COORD = "FETCH_DATA_COORD";
 export const TO_FAHRENHEIT = "TO_FAHRENHEIT";
@@ -20,10 +21,15 @@ export const TO_CELSIUS = "TO_CELSIUS";
 export const testReducer = (state = initialState, action: any): WeatherReducer => {
   switch (action.type) {
 
-    case FETCH_DATA_WEATHER:
+    case FETCH_DATA_WEATHER: 
       return {
         ...state,
-        apiWeather: action.payload
+        apiWeather: action.payload,
+      }
+      case ADD_CARD: 
+      return {
+        ...state,
+        city:[...state.city, action.payload ],
       }
     case FETCH_DATA_CITY:
       return {
@@ -88,5 +94,8 @@ export const testReducer = (state = initialState, action: any): WeatherReducer =
       return state
   }
 }
+// Action 
 export const fahrenheit = () => ({ type: TO_FAHRENHEIT })
 export const celsius = () => ({ type: TO_CELSIUS })
+export const addCard = (payload:any) => ({ type: ADD_CARD ,payload})
+export const cityCards = (payload:any) => ({ type: FETCH_DATA_CITY, payload })

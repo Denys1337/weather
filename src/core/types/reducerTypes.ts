@@ -2,10 +2,9 @@ import { CurrentWeather, WeatherAll } from "./weatherTypes";
 
 export type WeatherReducer = {
     apiWeather: WeatherAll,
-    city: CurrentWeather | null,
+    city: Array<WeatherAll> ,
     coord: {
         lat: number,
         lon: number,
     },
-
 }

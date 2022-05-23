@@ -8,6 +8,7 @@ import s from "./Highlights.module.scss";
 import { FC } from 'react';
 
 const Highlights:FC = () => {
+  
   return (
       <div>
           <h3>Today’s Highlights</h3>

@@ -1,19 +1,15 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import s from "./Search.module.scss";
 import icon from "../../../images/search-icon.png";
-import home from "../../../images/home.png";
 import { useDispatch } from 'react-redux';
 import { fetchDataWeather } from '../../../hooks/fetchDataWeather';
 import Autocomplete from "react-google-autocomplete";
 import { FC } from 'react';
+import { addCard } from '../../../store/reducers/testReducer';
 
 const Search:FC = () => {
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchDataWeather( "Vinnytsia"))
-    
-  }, [dispatch]);
+  const dispatch = useDispatch();
 
   return (
     <div className={s.search}>
@@ -24,14 +20,12 @@ const Search:FC = () => {
         
         const selectedPlace:string  = place!.formatted_address!.split(',')[0];
         dispatch(fetchDataWeather(selectedPlace));
-         }}
+       }}
       id="search"
       onFocus={e => e.target.setAttribute('autocomplete', 'off')}
-    />
-       <button className={s.search__home} onClick ={()=> dispatch(fetchDataWeather("Vinnytsia"))}><img src={home} alt="home" /></button>
-        
+    />    
     </div>
   )
 }
 
-export default Search
+export default Search;
